@@ -63,13 +63,13 @@ public class StringCalculatorTest
         assertEquals(0, result);
     }
 	
-	/*@Test
+	@Test
     public void testAddStringWithNegativeNumbers()
     {
         StringCalculator stringCalculator = new StringCalculator();
         int result = stringCalculator.add("-1,-2,1");
         assertEquals(4, result);
-    }*/
+    }
 	
 	@Test
     public void testAddStringWithMultipleDelimeters1()

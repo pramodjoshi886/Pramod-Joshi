@@ -5,7 +5,9 @@ import java.util.Arrays;
 public class StringCalculator {
 	
 	public int add(String numbers) {
-		String[] numString = numbers.split("[ \\n\\t\\r.,;:*!/?%()]");
+		
+		String string = numbers.replaceAll("[^0-9,\\-]", ",");
+		String[] numString = string.split("[ \\n\\t\\r.,;:*!/?%()]");
 		System.out.println(Arrays.toString(numString));
 		int sum = 0;
 		
