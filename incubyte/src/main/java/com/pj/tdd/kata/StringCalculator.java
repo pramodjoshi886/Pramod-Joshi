@@ -10,13 +10,19 @@ public class StringCalculator {
 		String[] numString = string.split("[ \\n\\t\\r.,;:*!/?%()]");
 		System.out.println(Arrays.toString(numString));
 		int sum = 0;
+		StringBuffer sb = new StringBuffer();
 		
 		for(String s:Arrays.asList(numString)) {
-			if(s.length()==1) {
+			if(s.contains("-")) {
+				sb.append(s+",");
+			}
+			else if(s.length()==1){
 				sum+=Integer.valueOf(s);
 			}
 		}
-		System.out.println(sum);
+		if(!sb.toString().isEmpty()) {
+			throw new NegativeNumberException("negatives not allowed : "+sb.toString());
+		}
 		return sum;
 	}
 

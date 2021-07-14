@@ -63,12 +63,11 @@ public class StringCalculatorTest
         assertEquals(0, result);
     }
 	
-	@Test
+	@Test(expected=NegativeNumberException.class)
     public void testAddStringWithNegativeNumbers()
     {
         StringCalculator stringCalculator = new StringCalculator();
-        int result = stringCalculator.add("-1,-2,1");
-        assertEquals(4, result);
+        stringCalculator.add("-1,-2,1");
     }
 	
 	@Test
