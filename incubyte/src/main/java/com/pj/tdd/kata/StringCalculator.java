@@ -1,21 +1,20 @@
 package com.pj.tdd.kata;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class StringCalculator {
 	
 	public int add(String numbers) {
-		List<Integer> numList = new ArrayList<>();
+		String[] numString = numbers.split("[ \\n\\t\\r.,;:*!/?%()]");
+		System.out.println(Arrays.toString(numString));
 		int sum = 0;
-		for(char c:numbers.toCharArray()) {
-			if(Character.isDigit(c)) {
-				 numList.add(Character.getNumericValue(c));
+		
+		for(String s:Arrays.asList(numString)) {
+			if(s.length()==1) {
+				sum+=Integer.valueOf(s);
 			}
 		}
-		for(int i=0;i<numList.size();i++) {
-			sum+=numList.get(i);
-		}
+		System.out.println(sum);
 		return sum;
 	}
 
